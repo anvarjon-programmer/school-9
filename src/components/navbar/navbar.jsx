@@ -101,6 +101,24 @@ const Navbar = ({ main, about, service, contact }) => {
                                                     document.getElementById("menuBurger").checked = false
                                                     setOpen(prev => !prev)
                                                 }} className={`${true ? "text-[#2C2C2C] font-[650] " : "text-[#2C2C2C] "} text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 before:invisible before:h-[0px] my-1 before:duration-300 hover:before:bg-[#458FF6] before:transition-all before:rounded-sm before:bg-gray-400 before:content-[''] before:absolute before:-left-5 before:top-6 relative text-center cursor-pointer transition-all hover:relative font-[550]`}>Асосий</p>
+                                                 <Link to='/galery'>
+                                                 <p onClick={() => {
+                                                    window.scrollTo(0, 0)
+                                                    document.getElementById("menuBurger").checked = false
+                                                    setOpen(prev => !prev)
+                                                }} className={`${true ? "text-[#2C2C2C] font-[650] " : "text-[#2C2C2C] "} text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 before:invisible before:h-[0px] my-1 before:duration-300 hover:before:bg-[#458FF6] before:transition-all before:rounded-sm before:bg-gray-400 before:content-[''] before:absolute before:-left-5 before:top-6 relative text-center cursor-pointer transition-all hover:relative font-[550]`}>
+                                                    Галерея</p>
+                                                   </Link>
+
+                                                   <Link to='/ustavi'>
+                                                 <p onClick={() => {
+                                                    window.scrollTo(0, 0)
+                                                    document.getElementById("menuBurger").checked = false
+                                                    setOpen(prev => !prev)
+                                                }} className={`${true ? "text-[#2C2C2C] font-[650] " : "text-[#2C2C2C] "} text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 before:invisible before:h-[0px] my-1 before:duration-300 hover:before:bg-[#458FF6] before:transition-all before:rounded-sm before:bg-gray-400 before:content-[''] before:absolute before:-left-5 before:top-6 relative text-center cursor-pointer transition-all hover:relative font-[550]`}>
+                                                    Уставлар</p>
+                                                   </Link>
+
 
                                                 <p onClick={() => {
                                                     contact.current.scrollIntoView()

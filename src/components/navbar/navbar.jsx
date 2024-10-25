@@ -3,6 +3,7 @@ import Wrapper from "../../layout/wrapper"
 
 import "./navbar.css"
 import { Link } from "react-router-dom"
+import { FaTelegram } from "react-icons/fa";
 
 const Navbar = ({ main, about, service, contact }) => {
 
@@ -32,10 +33,16 @@ const Navbar = ({ main, about, service, contact }) => {
                                     <a data-aos="fade-right" href="/" className="flex items-center justify-start gap-[12px]">
                                         <h1 className="text-[16px] tracking-wide hidden lg:block font-[700] max-w-[520px] text-[#1b2e47]">Toshkent shahar Madaniyat Boshqarmasi tasarrufidagi 9-son Bolalar musiqa va san'at maktabi.</h1>
                                     </a>
+                                    <div className="flex items-center gap-6">
+                                    <Link to="https://t.me/+pog-U-z4DX84MGVi" className="hidden md:block">
+                                      <FaTelegram size={30}/>
+                                    </Link>
                                     <div className="flex flex-col items-end">
                                         <a href="tel:998712472675" className="hidden lg:block max-w-full text-[#5f5f5f] font-bold"><i class="fa-solid fa-phone mt-[5px] mr-1.5"></i> +998 71 247-26-75</a>
                                         <a href="tel:998974315599" className="hidden lg:block max-w-full text-[#5f5f5f] font-bold"><i class="fa-solid fa-phone mt-[5px] mr-1.5"></i> +998 97 431-55-99</a>
                                     </div>
+                                    </div>
+
                                 </div>
 
                                 <div className="border-t mt-6 pt-3 w-full">
@@ -80,6 +87,19 @@ const Navbar = ({ main, about, service, contact }) => {
 
                                         }>Галерея</p>
                                         </Link>
+                                        <Link to='https://t.me/+pog-U-z4DX84MGVi'>
+                                        <p 
+                                            // contact.current.scrollIntoView()
+                                         className={`${false ? "text-[#2c2c2c] font-[500] " : "text-[#525255] "} 
+                                            text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 before:invisible 
+                                            before:h-[2px] before:duration-300 hover:before:bg-[#458FF6] before:transition-all before:rounded-sm
+                                             before:bg-gray-400 before:content-[''] before:absolute before:-left-5 before:top-6 relative text-center cursor-pointer
+                                              transition-all hover:relative font-[550]`
+
+                                        }>Галерея</p>
+                                        </Link>
+                                        
+
 
                                     </div>
                                 </div>
@@ -118,6 +138,7 @@ const Navbar = ({ main, about, service, contact }) => {
                                                 }} className={`${true ? "text-[#2C2C2C] font-[650] " : "text-[#2C2C2C] "} text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 before:invisible before:h-[0px] my-1 before:duration-300 hover:before:bg-[#458FF6] before:transition-all before:rounded-sm before:bg-gray-400 before:content-[''] before:absolute before:-left-5 before:top-6 relative text-center cursor-pointer transition-all hover:relative font-[550]`}>
                                                     Уставлар</p>
                                                    </Link>
+                                            
 
 
                                                 <p onClick={() => {
@@ -126,10 +147,13 @@ const Navbar = ({ main, about, service, contact }) => {
                                                     setOpen(prev => !prev)
                                                 }} className={`${true ? "text-[#2C2C2C] font-[500] " : "text-[#2C2C2C] "} text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 before:invisible before:h-[0px] my-1 before:duration-300 hover:before:bg-[#458FF6] before:transition-all before:rounded-sm before:bg-gray-400 before:content-[''] before:absolute before:-left-5 before:top-6 relative text-center cursor-pointer transition-all hover:relative font-[550]`}>Богланиш</p>
                                             </div>
-
+                                               
+                                            <Link to="https://t.me/+pog-U-z4DX84MGVi" className=" ml-5 md:hidden">
+                                                <FaTelegram size={30}/>
+                                            </Link>
                                             <div className="p-[10px] mt-[15px]">
                                                 <div>
-                                                    <a href="tel:998977773331" className="text-lg max-w-full text-[#5f5f5f] font-bold"><i class="fa-solid fa-phone mt-[5px] mr-1.5"></i> +998 97 777-33-31</a>
+                                                    <a href="tel:998712472675" className="text-lg max-w-full text-[#5f5f5f] font-bold"><i class="fa-solid fa-phone mt-[5px] mr-1.5"></i> +998  71 247 26 75</a>
                                                 </div>
                                             </div>
 

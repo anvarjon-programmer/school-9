@@ -17,7 +17,7 @@ const Galery = () => {
         },
         {
             img:headImg2,
-            title:"Maktab binosining krish zali"
+            title:"Maktab holografiya honasi"
         },
         {
             img:headImg3,

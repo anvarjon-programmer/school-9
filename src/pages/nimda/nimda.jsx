@@ -11,6 +11,8 @@ const Nimda = () => {
     const [isLogined, setLogin] = useState(false)
     const [tab, setTab] = useState(1)
 
+    
+
     const [sliders] = useCollection(
         collection(getFirestore(app), 'slider'),
         {

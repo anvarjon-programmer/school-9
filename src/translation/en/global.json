@@ -1,0 +1,44 @@
+{
+    "header":{
+        "message": "Children's music and art school No. 9 under the management of the Tashkent City Culture Department.",
+        "home":"Home",
+        "employees":"Employees",
+        "news":"news",
+        "contact":"Contact",
+        "charter":"charter",
+        "galery":"Galery"
+    },
+    "employees":{
+        "title":"Children's music and art school No. 9 under the management of the Tashkent City Culture Department Employees"
+    },
+    "news":{
+        "news":"News"
+    },
+    "schoolNumber":{
+        "schoolNumber":"School numbers"
+    },
+    "contact":{
+        "contact":"Leave your information"
+    },
+    "contactDesc":{
+        "contactDesc":"our workers will contact you.",
+        "connection":"Connection",
+        "connectionDesc":"Our admins will contact you."
+    },
+    "form":{
+        "name":"Name",
+        "surName":"Surname",
+        "age":"Age",
+        "phoneNumber":"Your phone number"
+    },
+    "references":{
+        "references":"Link",
+        "main":"Main",
+        "aaboutUs":"About Us",
+        "connection":"Connection",
+        "enter":"Enter"
+    },
+    "location":{
+        "location":"Address: Tashkent city, Uchtepa district, Tagachi neighborhood, Kokcha gate street 627."
+    }
+}

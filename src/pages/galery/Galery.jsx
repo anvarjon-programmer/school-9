@@ -29,7 +29,7 @@ const Galery = () => {
         },
         {
             img:headImg5,
-            title:"Maktab binosining ko‘rinishi"
+            title:"Kompyuter grafika honasi"
         },
     ]
 

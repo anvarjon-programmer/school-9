@@ -26,6 +26,7 @@ import { memo, useRef } from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { app } from '../firebase/firebase';
 import { collection, getFirestore } from 'firebase/firestore';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
 
@@ -33,6 +34,7 @@ const Home = () => {
     const about = useRef(null)
     const service = useRef(null)
     const contact = useRef(null)
+    const [t, i18n] = useTranslation("global");
 
     const [sliders] = useCollection(
         collection(getFirestore(app), 'slider'),
@@ -81,7 +83,7 @@ const Home = () => {
                 <Wrapper>
                     <div>
 
-                        <img data-aos="fade-right" className="absolute left-0" src={design_elem1} alt="|||" />
+                        <img data-aos="fade-right" className="sliderImg absolute left-0 " src={design_elem1} alt="|||" />
 
                         <Swiper
                             spaceBetween={80}
@@ -106,7 +108,6 @@ const Home = () => {
                                     </SwiperSlide>
                                 ))
                             }
-
                         </Swiper>
 
                         <div id='rahbariyat' ref={about}></div>
@@ -116,7 +117,10 @@ const Home = () => {
                             <img data-aos="fade-right" data-aos-duration="400" data-aos-delay="200" className="absolute left-0 mt-[400px]" src={design_elem1} alt="|||" />
                             <img data-aos="fade-left" data-aos-duration="800" data-aos-delay="200" className="absolute right-0 mt-[450px]" src={design_elem3} alt="|||" />
 
-                            <Title title={"Учтепа тумани 9-сон болалар мусиқа ва санъат мактаби маданият бўлими ходимлари РЎЙХАТИ"} />
+                            {/* <Title title={"Toshkent shahar madaniyat boshqarmasi tasarrufidagi 9-son bolalar musiqa va san'at maktabi."} /> */}
+                            <h1 className='text-center text-3xl font-semibold max-w-[800px] m-auto'>
+                                {t("employees.title")}
+                            </h1>
 
                             <div className="flex items-center flex-wrap mt-[50px] w-full gap-y-[45px] gap-x-[36px] justify-center">
 
@@ -143,7 +147,7 @@ const Home = () => {
 
                             <img data-aos="fade-left" data-aos-duration="800" data-aos-delay="200" className="absolute right-0 mt-[500px]" src={design_elem1} alt="|||" />
 
-                            <Title title={"Янгиликлар"} />
+                            <Title title={t("news.news")} />
 
                             <div className="flex items-center flex-wrap mt-[50px] w-full gap-y-[45px] gap-x-[36px] justify-center">
 
@@ -185,7 +189,7 @@ const Home = () => {
 
                         <div className="mt-[75px] lg:px-0 px-2 lg:mt-[150px]">
 
-                            <Title title={"Мактабимиз ракамларда"} />
+                            <Title title={t("schoolNumber.schoolNumber")} />
 
                             <div className='mt-[50px]'>
 
@@ -247,7 +251,7 @@ const Home = () => {
                             <img data-aos="fade-right" data-aos-duration="600" data-aos-delay="200" className="absolute left-0 mt-32" src={design_elem2} alt="|||" />
                             <img data-aos="fade-left" data-aos-duration="400" data-aos-delay="200" className="absolute right-0 mt-[350px]" src={design_elem1} alt="|||" />
 
-                            <Title title={"Малумотларингизни колдиринг"} desc={"Ишчиларимиз сизда богланишади."} />
+                            <Title title={t("contact.contact")} desc={t("contactDesc.contactDesc")} />
 
                             <div className='mt-[75px] relative z-50'>
                                 <Form />

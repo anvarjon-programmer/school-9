@@ -1,0 +1,44 @@
+{
+    "header":{
+        "message":"Toshkent shahar madaniyat boshqarmasi tasarrufidagi 9-son bolalar musiqa va san'at maktabi.",
+        "home":"bosh sahifa",
+        "employees":"Hodimlar",
+        "news":"Yangloiklar",
+        "contact":"Aloqa",
+        "charter":"Ustav",
+        "galery":"Galery"
+    },
+    "employees":{
+        "title":"Toshkent shahar madaniyat boshqarmasi tasarrufidagi 9-son bolalar musiqa va san'at maktabi Hodimlari"
+    },
+    "news":{
+        "news":"Yangliklar"
+    },
+    "schoolNumber":{
+        "schoolNumber":"Маktab raqamlari"
+    },
+    "contact":{
+        "contact":"Маlumotlaringizni qoldring"
+    },
+    "contactDesc":{
+        "contactDesc":"ishchilarimiz sizlar bilan bog'lanishadi.",
+        "connection":"Bog'lanish",
+        "connectionDesc":"Аdminlarimiz siz bilan bog'lanishadi."
+    },
+    "form":{
+        "name":"Ism",
+        "surName":"Familiya",
+        "age":"Yoshingiz",
+        "phoneNumber":"Telefon raqamingiz"
+    },
+    "references":{
+        "references":"Havolalar",
+        "main":"Asosiy",
+        "aaboutUs":"Biz haqimizda",
+        "connection":"Bog'lanish",
+        "enter":"Krish"
+    },
+    "location":{
+        "location":"Manzil: Toshkent shahar Uchtepa tumani Taqachi mahallasi Ko'kcha darvoza ko'chasi 627 uy."
+    }
+}

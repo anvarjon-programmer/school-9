@@ -9,13 +9,11 @@ const News = ({title, image, desc, by, fullDesc, fade, id, addedAt}) => {
                 <img className="w-[100%] absolute top-0 left-0 object-cover h-[100%] rounded-2xl" src={image} alt={title} />
                 <div className="relative px-[20px]">
                     <div className="absolute top-0 left-0 bg-[#00000086] w-full pb-2 h-full rounded-[20px]">
-
                     </div>
                     <h1 className="text-[#fff] relative z-10 text-[20px] mt-20 font-[700] truncate">{title}</h1>
                     <p className="text-[#ffffffbb] z-10 relative text-[14px] truncate font-[300] h-[25px] max-w-[266px]">{desc.slice(0, 75)}{desc.length > 75 && "..."}</p>
-
                     <div className="flex justify-between mt-[5px] z-10 relative items-center pb-4">
-                        <button className="px-[20px] bg-white py-[5px] text-[14px] transition-all hover:bg-[#458FF6] hover:text-[#fff] rounded-[55px] flex items-center gap-1.5 text-[#458FF6] font-[700]">Укиш <i class="fa-solid mt-0.5 fa-angle-right"></i></button>
+                        <button className="px-[20px] bg-white py-[5px] text-[14px] transition-all hover:bg-[#458FF6] hover:text-[#fff] rounded-[55px] flex items-center gap-1.5 text-[#458FF6] font-[700]">O'qish<i class="fa-solid mt-0.5 fa-angle-right"></i></button>
                     </div>
                 </div>
             </div>

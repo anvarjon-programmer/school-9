@@ -161,16 +161,15 @@ const Navbar = ({ main, about, service, contact }) => {
                       </p>
                     </Link>
 
-                    <div className="flex items-center gap-2">
-  <select
-    className="border border-gray-300 bg-white text-[#525255] p-2 rounded-lg shadow-md hover:bg-gray-100 focus:outline-none"
-    onChange={(e) => handleChangeLanguage(e.target.value)}
-  >
-    <option value="uz">UZ</option>
-    <option value="en">EN</option>
-    <option value="ru">RU</option>
-  </select>
-</div>
+                    <select
+  className="border border-gray-300 bg-white text-[#525255] p-2 rounded-lg shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
+  onChange={(e) => handleChangeLanguage(e.target.value)}
+>
+  <option value="uz">UZ</option>
+  <option value="en">EN</option>
+  <option value="ru">RU</option>
+</select>
+
 
 
                     {/* <Link to='https://t.me/+pog-U-z4DX84MGVi'>
@@ -197,7 +196,7 @@ const Navbar = ({ main, about, service, contact }) => {
                     <label
                       onClick={() => setOpen((prev) => !prev)}
                       htmlFor="menuBurger"
-                      className="bg-[#458FF6] cursor-pointer w-[50px] text-lg h-[50px] flex justify-center items-center lg:hidden transition-all duration-300 text-white py-[8px] px-[20px] font-[700] rounded-xl"
+                      className="bg-[#458FF6] cursor-pointer w-[50px] text-lg h-[40px] flex justify-center items-center lg:hidden transition-all duration-300 text-white py-[8px] px-[20px] font-[700] rounded-xl"
                     >
                       <i
                         className={`fa-solid ${
@@ -205,6 +204,18 @@ const Navbar = ({ main, about, service, contact }) => {
                         }`}
                       ></i>
                     </label>
+                  </div>
+
+                  <div className="drawer-content absolute -top-[35px] z-50 -right-[70px]">
+                  <select
+  className="border border-gray-300 bg-[#458FF6] text-white p-2 rounded-lg shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out md:hidden"
+  onChange={(e) => handleChangeLanguage(e.target.value)}
+>
+  <option value="uz">UZ</option>
+  <option value="en">EN</option>
+  <option value="ru">RU</option>
+</select>
+
                   </div>
                   <div className="drawer-side w-full z-[3]">
                     <label

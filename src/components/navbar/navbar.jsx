@@ -41,7 +41,7 @@ const Navbar = ({ main, about, service, contact }) => {
                     className="flex items-center justify-start gap-[12px]"
                   >
                     <h1 className="text-[16px] tracking-wide hidden lg:block font-[700] max-w-[520px] text-[#1b2e47]">
-                    {t("header.message")}
+                      {t("header.message")}
                     </h1>
                   </a>
                   <div className="flex items-center gap-6">
@@ -75,56 +75,66 @@ const Navbar = ({ main, about, service, contact }) => {
                     data-aos="fade-left"
                     className="lg:flex hidden justify-center items-center gap-[40px]"
                   >
-                   <Link to='/'>
-                   <p
-                      onClick={() => {
-                        window.scrollTo(0, 0);
-                      }}
-                      className={`${
-                        false ? "text-[#2c2c2c] font-[650] " : "text-[#525255] "
-                      } text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 before:invisible before:h-[2px] before:duration-300 hover:before:bg-[#458FF6] before:transition-all before:rounded-sm before:bg-gray-400 before:content-[''] before:absolute before:-left-5 before:top-6 relative text-center cursor-pointer transition-all hover:relative font-[550]`}
-                    >
-                      {t("header.home")}
-                    </p>
+                    <Link to="/">
+                      <p
+                        onClick={() => {
+                          window.scrollTo(0, 0);
+                        }}
+                        className={`${
+                          false
+                            ? "text-[#2c2c2c] font-[650] "
+                            : "text-[#525255] "
+                        } text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 before:invisible before:h-[2px] before:duration-300 hover:before:bg-[#458FF6] before:transition-all before:rounded-sm before:bg-gray-400 before:content-[''] before:absolute before:-left-5 before:top-6 relative text-center cursor-pointer transition-all hover:relative font-[550]`}
+                      >
+                        {t("header.home")}
+                      </p>
                     </Link>
 
-                    <Link to='/'>
-                    <p
-                      onClick={() => {
-                        document.getElementById("rahbariyat").scrollIntoView();
-                      }}
-                      className={`${
-                        false ? "text-[#2c2c2c] font-[500] " : "text-[#525255] "
-                      } text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 before:invisible before:h-[2px] before:duration-300 hover:before:bg-[#458FF6] before:transition-all before:rounded-sm before:bg-gray-400 before:content-[''] before:absolute before:-left-5 before:top-6 relative text-center cursor-pointer transition-all hover:relative font-[550]`}
-                    >
-                      {t("header.employees")}
-                    </p>
+                    <Link to="/">
+                      <p
+                        onClick={() => {
+                          document
+                            .getElementById("rahbariyat")
+                            .scrollIntoView();
+                        }}
+                        className={`${
+                          false
+                            ? "text-[#2c2c2c] font-[500] "
+                            : "text-[#525255] "
+                        } text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 before:invisible before:h-[2px] before:duration-300 hover:before:bg-[#458FF6] before:transition-all before:rounded-sm before:bg-gray-400 before:content-[''] before:absolute before:-left-5 before:top-6 relative text-center cursor-pointer transition-all hover:relative font-[550]`}
+                      >
+                        {t("header.employees")}
+                      </p>
                     </Link>
 
-                    <Link to='/'>
-                    <p
-                      onClick={() => {
-                        document.getElementById("news").scrollIntoView();
-                      }}
-                      className={`${
-                        false ? "text-[#2c2c2c] font-[500] " : "text-[#525255] "
-                      } text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 before:invisible before:h-[2px] before:duration-300 hover:before:bg-[#458FF6] before:transition-all before:rounded-sm before:bg-gray-400 before:content-[''] before:absolute before:-left-5 before:top-6 relative text-center cursor-pointer transition-all hover:relative font-[550]`}
-                    >
-                      {t("header.news")}
-                    </p>
+                    <Link to="/">
+                      <p
+                        onClick={() => {
+                          document.getElementById("news").scrollIntoView();
+                        }}
+                        className={`${
+                          false
+                            ? "text-[#2c2c2c] font-[500] "
+                            : "text-[#525255] "
+                        } text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 before:invisible before:h-[2px] before:duration-300 hover:before:bg-[#458FF6] before:transition-all before:rounded-sm before:bg-gray-400 before:content-[''] before:absolute before:-left-5 before:top-6 relative text-center cursor-pointer transition-all hover:relative font-[550]`}
+                      >
+                        {t("header.news")}
+                      </p>
                     </Link>
 
-                    <Link to='/'>
-                    <p
-                      onClick={() => {
-                        contact.current.scrollIntoView();
-                      }}
-                      className={`${
-                        false ? "text-[#2c2c2c] font-[500] " : "text-[#525255] "
-                      } text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 before:invisible before:h-[2px] before:duration-300 hover:before:bg-[#458FF6] before:transition-all before:rounded-sm before:bg-gray-400 before:content-[''] before:absolute before:-left-5 before:top-6 relative text-center cursor-pointer transition-all hover:relative font-[550]`}
-                    >
-                      {t("header.contact")}
-                    </p>
+                    <Link to="/">
+                      <p
+                        onClick={() => {
+                          contact.current.scrollIntoView();
+                        }}
+                        className={`${
+                          false
+                            ? "text-[#2c2c2c] font-[500] "
+                            : "text-[#525255] "
+                        } text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 before:invisible before:h-[2px] before:duration-300 hover:before:bg-[#458FF6] before:transition-all before:rounded-sm before:bg-gray-400 before:content-[''] before:absolute before:-left-5 before:top-6 relative text-center cursor-pointer transition-all hover:relative font-[550]`}
+                      >
+                        {t("header.contact")}
+                      </p>
                     </Link>
 
                     <Link to="/ustavi">
@@ -162,15 +172,13 @@ const Navbar = ({ main, about, service, contact }) => {
                     </Link>
 
                     <select
-  className="border border-gray-300 bg-white text-[#525255] p-2 rounded-lg shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
-  onChange={(e) => handleChangeLanguage(e.target.value)}
->
-  <option value="uz">UZ</option>
-  <option value="en">EN</option>
-  <option value="ru">RU</option>
-</select>
-
-
+                      className="border border-gray-300 bg-white text-[#525255] p-2 rounded-lg shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
+                      onChange={(e) => handleChangeLanguage(e.target.value)}
+                    >
+                      <option value="uz">UZ</option>
+                      <option value="en">EN</option>
+                      <option value="ru">RU</option>
+                    </select>
 
                     {/* <Link to='https://t.me/+pog-U-z4DX84MGVi'>
                                         <p 
@@ -207,15 +215,14 @@ const Navbar = ({ main, about, service, contact }) => {
                   </div>
 
                   <div className="drawer-content absolute -top-[35px] z-50 -right-[70px]">
-                  <select
-  className="border border-gray-300 bg-[#458FF6] text-white p-2 rounded-lg shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out md:hidden"
-  onChange={(e) => handleChangeLanguage(e.target.value)}
->
-  <option value="uz">UZ</option>
-  <option value="en">EN</option>
-  <option value="ru">RU</option>
-</select>
-
+                    <select
+                      className="border border-gray-300 bg-[#458FF6] text-gray-400 p-2 rounded-lg shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out md:hidden"
+                      onChange={(e) => handleChangeLanguage(e.target.value)}
+                    >
+                      <option value="uz">UZ</option>
+                      <option value="en">EN</option>
+                      <option value="ru">RU</option>
+                    </select>
                   </div>
                   <div className="drawer-side w-full z-[3]">
                     <label

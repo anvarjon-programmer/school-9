@@ -1,57 +1,58 @@
 import axios from "axios";
 import { memo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import img1 from '../../assets/contact.jpg'
 
 const FormInput = ({ value, setValue, placeholder, type, disable }) => {
     return (
         <input
             value={value}
             disabled={disable}
-            onChange={e => setValue(e.target.value)}
+            onChange={(e) => setValue(e.target.value)}
             type={type}
             placeholder={placeholder}
             className="input rounded-2xl px-8 placeholder:text-[#b3b3b3] border-[#e1edff] focus:border-l-[12px] duration-300 transition-all border outline-none focus:outline-offset-0 focus:border-[#91bfff] focus:outline-none input-bordered w-full"
+            aria-label={placeholder}
         />
     );
 };
 
 const Form = () => {
     const [name, setName] = useState("");
-    const [lastname, setLastname] = useState("");
+    const [surname, setSurname] = useState("");
     const [age, setAge] = useState("");
-    const [tel, setTel] = useState("");
+    const [number, setNumber] = useState("");
     const [isDisabled, setDisable] = useState(false);
     const [title, setTitle] = useState("Bog'lanish");
     const { t } = useTranslation("global");
 
     const sendMessage = async () => {
-        if (name && lastname && age && tel) {
-            const TOKEN = '7803015587:AAGzHwnCKMCMIVelKSxWL6-G_w3i3net0As';
-            const CHAT_ID = '-1002492536449';
-            const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+        if (name && surname && age && number) {
+            try {
+                setDisable(true);
+                setTitle("Жўнатилмоқда...");
 
-            let msg = `<b>---------------------------</b>\n`;
-            msg += `<b>Ism: ${name}</b>\n`;
-            msg += `<b>Familiya: ${lastname}</b>\n`;
-            msg += `<b>Yosh: ${age}</b>\n`;
-            msg += `<b>Telefon raqam: ${tel}</b>\n`;
-            msg += `<b>---------------------------</b>`;
+                await axios.post("https://katarac820.pythonanywhere.com/main/contact/", {
+                    name,
+                    surname,
+                    age,
+                    number,
+                });
 
-            setDisable(true);
-            setTitle("Жўнатилди!");
-
-            await axios.post(URL_API, {
-                chat_id: CHAT_ID,
-                parse_mode: 'html',
-                text: msg
-            });
-
-            setName("");
-            setLastname("");
-            setAge("");
-            setTel("");
-            setDisable(false);
-            setTitle("Bog'lanish");
+                setTitle("Жўнатилди!");
+            } catch (error) {
+                console.error("Failed to send message:", error);
+                setTitle("Хато юз берди!");
+            } finally {
+                setDisable(false);
+                setName("");
+                setSurname("");
+                setAge("");
+                setNumber("");
+                setTitle("Bog'lanish");
+            }
+        } else {
+            alert("Iltimos, barcha maydonlarni to'ldiring.");
         }
     };
 
@@ -73,8 +74,8 @@ const Form = () => {
 
                 <FormInput
                     disable={isDisabled}
-                    value={lastname}
-                    setValue={setLastname}
+                    value={surname}
+                    setValue={setSurname}
                     placeholder={t("form.surName")}
                     type="text"
                 />
@@ -89,8 +90,8 @@ const Form = () => {
 
                 <FormInput
                     disable={isDisabled}
-                    value={tel}
-                    setValue={setTel}
+                    value={number}
+                    setValue={setNumber}
                     placeholder={t("form.phoneNumber")}
                     type="number"
                 />
@@ -100,14 +101,15 @@ const Form = () => {
                         disabled={isDisabled}
                         onClick={sendMessage}
                         className="py-[8px] w-full px-[45px] mt-[10px] justify-center transition-all bg-[#458FF6] text-[#fff] border border-[#458FF6] rounded-[15px] flex items-center gap-1.5 hover:bg-[#fff] hover:text-[#458FF6] font-[700]"
+                        aria-label={title}
                     >
-                        {/* {title}  */}
-                        {t("contactDesc.connection")}<i className="fa-solid mt-0.5 fa-angle-right"></i>
+                        {title}
+                        <i className="fa-solid mt-0.5 fa-angle-right"></i>
                     </button>
                 </div>
             </div>
 
-            <img data-aos="fade-left" className="hidden lg:block w-full max-w-[480px] rounded-2xl" src="https://i.ibb.co/7vK1nG1/image.png" alt="musiqa" />
+            <img data-aos="fade-left" className="hidden lg:block w-full max-w-[480px] rounded-2xl" src={img1} alt="musiqa" />
         </div>
     );
 };

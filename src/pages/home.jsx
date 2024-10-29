@@ -130,13 +130,18 @@ useEffect(() => {
     const [count,setCount] = useState([]);
     const getAllCount = async () =>{
         const {data} = await axios.get("https://katarac820.pythonanywhere.com/main/background/");
-        setCount(data)
         console.log(data);
-    }
+        const translateCount = data.map((item) => ({
+            ...item,
+            title: t(`${item.title[i18n.language]}`),
+            body: t(`${item.body[i18n.language]}`),
+        }));
+        setCount(translateCount)
+     }
 
     useEffect(() =>{
         getAllCount()
-    },[])
+    },[i18n.language])
 
     return (
         <div ref={main}>
@@ -186,7 +191,7 @@ useEffect(() => {
                             <img data-aos="fade-left" data-aos-duration="800" data-aos-delay="200" className="absolute right-0 mt-[450px]" src={design_elem3} alt="|||" />
 
                             {/* <Title title={"Toshkent shahar madaniyat boshqarmasi tasarrufidagi 9-son bolalar musiqa va san'at maktabi."} /> */}
-                            <h1 className='text-center text-3xl font-semibold max-w-[800px] m-auto'>
+                            <h1 className='text-center text-3xl font-semibold max-w-[700px] m-auto'>
                                 {t("employees.title")}
                             </h1>
 
@@ -258,48 +263,15 @@ useEffect(() => {
 
                             <div className='mt-[50px]'>
 
-                                <Info info={[
-                                    {
-                                        title: counts?.docs[0]?.data()?.title,
-                                        desc: counts?.docs[0]?.data()?.desc,
-                                    },
-                                    {
-                                        title: counts?.docs[1]?.data()?.title,
-                                        desc: counts?.docs[1]?.data()?.desc,
-                                    },
-                                    {
-                                        title: counts?.docs[2]?.data()?.title,
-                                        desc: counts?.docs[2]?.data()?.desc,
-                                    },
-                                    {
-                                        title: counts?.docs[3]?.data()?.title,
-                                        desc: counts?.docs[3]?.data()?.desc,
-                                    },
-                                    {
-                                        title: counts?.docs[4]?.data()?.title,
-                                        desc: counts?.docs[4]?.data()?.desc,
-                                    },
-                                    {
-                                        title: counts?.docs[5]?.data()?.title,
-                                        desc: counts?.docs[5]?.data()?.desc,
-                                    },
-                                    {
-                                        title: counts?.docs[6]?.data()?.title,
-                                        desc: counts?.docs[6]?.data()?.desc,
-                                    },
-                                    {
-                                        title: counts?.docs[7]?.data()?.title,
-                                        desc: counts?.docs[7]?.data()?.desc,
-                                    },
-                                    {
-                                        title: counts?.docs[8]?.data()?.title,
-                                        desc: counts?.docs[8]?.data()?.desc,
-                                    },
-                                    {
-                                        title: counts?.docs[9]?.data()?.title,
-                                        desc: counts?.docs[9]?.data()?.desc,
-                                    }
-                                ]} />
+                                {count.map((item,index) =>(
+                                    <Info key={index} info={[
+                                        {
+                                            title: item.title,
+                                            desc: item.body,
+                                        }
+                                        
+                                    ]} />
+                                ))}
 
                             </div>
 

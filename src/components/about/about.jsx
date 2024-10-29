@@ -12,11 +12,7 @@ const About = ({name, image, roles, id, fade, contact}) => {
                 <h1 className="text-[#2c2c2c] text-[24px] h-[100px] font-[700] mt-[25px]">{name}</h1>
 
                 <div className="h-[75px] -mt-[15px] flex flex-col items-start gap-0.5">
-                    {
-                        roles?.map((item, index) => (
-                            <p className="text-[#7D7987] text-[17px] font-[300] max-w-[266px]">- {item}</p>
-                        ))
-                    }
+                            <p className="text-[#7D7987] text-[17px] font-[300] max-w-[266px]">- {roles}</p>
                 </div>
 
 

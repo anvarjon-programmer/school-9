@@ -175,7 +175,7 @@ const Navbar = ({ main, about, service, contact }) => {
                       className="border border-gray-300 bg-white text-[#525255] p-2 rounded-lg shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
                       onChange={(e) => handleChangeLanguage(e.target.value)}
                     >
-                      <option value="uz">UZ</option>
+                      <option value="uz"></option>
                       <option value="en">EN</option>
                       <option value="ru">RU</option>
                     </select>

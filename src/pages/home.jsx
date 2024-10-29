@@ -15,6 +15,7 @@ import News from "../components/news/news"
 
 import About from '../components/about/about';
 
+
 import design_elem1 from "../assets/images/design_elem1.svg"
 import design_elem2 from "../assets/images/design_elem2.svg"
 import design_elem3 from "../assets/images/design_elem3.svg"
@@ -22,11 +23,14 @@ import Info from '../components/info/info';
 import Service from '../components/service/service';
 import Form from '../components/form/form';
 
-import { memo, useRef } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { app } from '../firebase/firebase';
 import { collection, getFirestore } from 'firebase/firestore';
 import { useTranslation } from 'react-i18next';
+import { xodimlar } from '../components/service/Xdimlar';
+import axios from 'axios';
+import title from '../components/title/title';
 
 const Home = () => {
 
@@ -34,7 +38,6 @@ const Home = () => {
     const about = useRef(null)
     const service = useRef(null)
     const contact = useRef(null)
-    const [t, i18n] = useTranslation("global");
 
     const [sliders] = useCollection(
         collection(getFirestore(app), 'slider'),
@@ -71,6 +74,70 @@ const Home = () => {
         }
     )
 
+    const [data, setData] = useState([]);
+const { t, i18n } = useTranslation("global");
+
+const getData = async () => {
+    const { data } = await axios.get("https://katarac820.pythonanywhere.com/main/employ/");
+    const translatedData = data.map((item) => ({
+        ...item,
+        fullname: t(`${item.fullname[i18n.language]}`),
+        job: t(`${item.job[i18n.language]}`),
+    }));
+    setData(translatedData);
+};
+
+useEffect(() => {
+    getData();
+}, [i18n.language]); 
+
+
+    const [swaperData,setSwaperData] = useState([]);
+    const getSwagerData = async () =>{
+        const {data} = await axios.get("https://katarac820.pythonanywhere.com/main/banner/");
+        
+        const translatedBanner = data.map((item) => ({
+            ...item,
+            title: t(`${item.title[i18n.language]}`),
+            body: t(`${item.body[i18n.language]}`),
+        }));
+        setSwaperData(translatedBanner)
+    }
+
+    useEffect(() =>{
+        getSwagerData()
+    },[i18n.language])
+
+
+
+    const [newsData,setNewsData] = useState([]);
+    const getAllNews = async() =>{
+        const {data} = await axios.get("https://katarac820.pythonanywhere.com/main/news/")
+        const translatedNews = data.map((item) => ({
+            ...item,
+            title: t(`${item.title[i18n.language]}`),
+            body: t(`${item.body[i18n.language]}`),
+        }));
+        setNewsData(translatedNews);
+        // console.log(data)
+        
+    }
+    useEffect(() =>{
+        getAllNews()
+    },[i18n.language])
+
+
+    const [count,setCount] = useState([]);
+    const getAllCount = async () =>{
+        const {data} = await axios.get("https://katarac820.pythonanywhere.com/main/background/");
+        setCount(data)
+        console.log(data);
+    }
+
+    useEffect(() =>{
+        getAllCount()
+    },[])
+
     return (
         <div ref={main}>
             <Navbar
@@ -98,13 +165,14 @@ const Home = () => {
                             modules={[Autoplay, Navigation]}
                         >
                             {
-                                sliders?.docs.reverse().map((item, index) => (
-                                    <SwiperSlide>
+                               swaperData.map((item, index) => (
+                                    <SwiperSlide key={index}>
                                         <SliderComponent
-                                            title={item?.data().title}
-                                            desc={item?.data().desc}
-                                            img={item?.data().imageUrl}
-                                            contact={contact} />
+                                            title={item?.title}
+                                            desc={item?.body}
+                                            img={item?.image_url}
+                                            // contact={contact} 
+                                            />
                                     </SwiperSlide>
                                 ))
                             }
@@ -123,22 +191,19 @@ const Home = () => {
                             </h1>
 
                             <div className="flex items-center flex-wrap mt-[50px] w-full gap-y-[45px] gap-x-[36px] justify-center">
-
                                 {
-                                    abouts?.docs.map((item, index) => (
-                                        <About
-                                            contact={contact}
-                                            name={item?.data().name}
-                                            image={item?.data().imageUrl}
-                                            roles={item?.data().roles}
-                                            id={item?.id}
+                                    data.map((item, index) =>(
+                                        <About key={index}
+                                            // contact={contact}
+                                            name={item.fullname}
+                                            image={item.image_url}
+                                            roles={item.job}
+                                            id={item?.index+1}
                                             fade={index == 0 ? "right" : index == 1 ? "up" : index == 2 ? "left" : index == 3 ? "right" : index == 4 ? "down" : index == 5 ? "left" : ""}
                                         />
                                     ))
                                 }
-
                             </div>
-
                         </div>
 
                         <div id='news' className="mt-[75px] lg:px-0 px-2 lg:mt-[50px]">
@@ -164,15 +229,15 @@ const Home = () => {
                                     className='pb-10'
                                 >
                                     {
-                                        news?.docs.reverse().map((item, index) => (
-                                            <SwiperSlide className='w-fit'>
+                                        newsData.map((item, index) => (
+                                            <SwiperSlide className='w-fit' key={index}>
                                                 <News
-                                                    title={item?.data().title}
-                                                    image={item?.data().imageUrl}
-                                                    desc={item?.data().desc}
-                                                    by={item?.data().by}
-                                                    fullDesc={item?.data().fullDesc}
-                                                    addedAt={item?.data().addedAt}
+                                                    title={item?.title}
+                                                    image={item?.image_url}
+                                                    desc={item?.body}
+                                                    by={item?.body}
+                                                    fullDesc={item?.body}
+                                                    addedAt={item?.body}
                                                     id={item?.id}
                                                     fade={index == 0 ? "right" : index == 1 ? "up" : index == 2 ? "left" : index == 3 ? "right" : index == 4 ? "down" : index == 5 ? "left" : ""}
                                                 />

@@ -7,29 +7,31 @@ import headImg5 from '../../assets/galery-header/5.jpg'
 import { cartImg } from '../../components/service/swagger-img'
 import Navbar from '../../components/navbar/navbar'
 import Footer from '../../components/footer/footer'
+import { useTranslation } from 'react-i18next'
 /////////////////////////////////////////////
 
 const Galery = () => {
+    const { t } = useTranslation("global");
     const headerGall = [
         {
             img:headImg1,
-            title:"Maktab binosining ko‘rinishi"
+            title:t("galery.name1")
         },
         {
             img:headImg2,
-            title:"Maktab xoreografiya Xonasi"
+            title:t("galery.name2")
         },
         {
             img:headImg3,
-            title:"Maktab  foyesi "
+            title:t("galery.name3")
         },
         {
             img:headImg4,
-            title:"Maktab  foyesi "
+            title:t("galery.name4")
         },
         {
             img:headImg5,
-            title:"Kompyuter grafika xonasi"
+            title:t("galery.name5")
         },
     ]
 
@@ -68,7 +70,7 @@ const fortopianoPageNumbers = [...Array(fortopianoPageCount).keys()];
 
 
          <section className='px-4 mb-6 mt-10'>
-        <h1 className='text-center font-semibold mb-10 text-2xl md:text-4xl '>Maktab galereyasi</h1>
+        <h1 className='text-center font-semibold mb-10 text-2xl md:text-4xl '>{t("galery.name0")}</h1>
   <div className='grid grid-cols md:grid-cols-2 lg:grid-cols-3 gap-[30px] xl:grid-cols-3
       max-w-sm mx-auto md:max-w-none md:mx-0'>
     {

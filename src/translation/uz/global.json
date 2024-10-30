@@ -40,5 +40,14 @@
     },
     "location":{
         "location":"Manzil: Toshkent shahar Uchtepa tumani Taqachi mahallasi Ko'kcha darvoza ko'chasi 627 uy."
+    },
+    "galery":{
+        "name0":"Maktab galereyasi",
+        "name1":"Maktab binosining ko‘rinishi",
+        "name2":"Maktab xoreografiya Xonasi",
+        "name3":"Maktab foyesi",
+        "name4":"Maktab foyesi",
+        "name5":"Kompyuter grafika xonasi"
     }
+
 }

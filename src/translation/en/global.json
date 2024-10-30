@@ -40,5 +40,13 @@
     },
     "location":{
         "location":"Address: Tashkent city, Uchtepa district, Tagachi neighborhood, Kokcha gate street 627."
+    },
+    "galery":{
+        "name0":"School gallery",
+        "name1":"View of the school building",
+        "name2":"School choreography room",
+        "name3":"school lobby",
+        "name4":"school lobby",
+        "name5":"Computer graphics room"
     }
 }

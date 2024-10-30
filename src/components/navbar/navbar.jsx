@@ -116,7 +116,11 @@ const Navbar = ({ main, about, service, contact }) => {
                           false
                             ? "text-[#2c2c2c] font-[500] "
                             : "text-[#525255] "
-                        } text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 before:invisible before:h-[2px] before:duration-300 hover:before:bg-[#458FF6] before:transition-all before:rounded-sm before:bg-gray-400 before:content-[''] before:absolute before:-left-5 before:top-6 relative text-center cursor-pointer transition-all hover:relative font-[550]`}
+                        } text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 
+                         before:invisible before:h-[2px] before:duration-300 hover:before:bg-[#458FF6] 
+                         before:transition-all before:rounded-sm before:bg-gray-400 before:content-[''] 
+                         before:absolute before:-left-5 before:top-6 relative text-center cursor-pointer 
+                         transition-all hover:relative font-[550]`}
                       >
                         {t("header.news")}
                       </p>
@@ -298,7 +302,10 @@ const Navbar = ({ main, about, service, contact }) => {
                             true
                               ? "text-[#2C2C2C] font-[500] "
                               : "text-[#2C2C2C] "
-                          } text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 before:invisible before:h-[0px] my-1 before:duration-300 hover:before:bg-[#458FF6] before:transition-all before:rounded-sm before:bg-gray-400 before:content-[''] before:absolute before:-left-5 before:top-6 relative text-center cursor-pointer transition-all hover:relative font-[550]`}
+                          } text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 
+                           before:invisible before:h-[0px] my-1 before:duration-300 hover:before:bg-[#458FF6] before:transition-all 
+                           before:rounded-sm before:bg-gray-400 before:content-[''] before:absolute before:-left-5 before:top-6 relative 
+                           text-center cursor-pointer transition-all hover:relative font-[550]`}
                         ></p>
                       </div>
 
@@ -322,7 +329,25 @@ const Navbar = ({ main, about, service, contact }) => {
 
                       <div className="flex justify-start mt-[25px]">
                         <button className="hover:bg-[#3c6bac] px-[50px] py-[10px] transition-all bg-[#458FF6] text-[#fff] border border-[#458FF6] rounded-[15px] flex items-center gap-2 font-[700]">
-                          Богланиш{" "}
+                        {/* {t("contactDesc.connection")} */}
+                        <Link to="/ustavi">
+                          <p
+                            onClick={() => {
+                              window.scrollTo(0, 0);
+                              document.getElementById(
+                                "menuBurger"
+                              ).checked = false;
+                              setOpen((prev) => !prev);
+                            }}
+                            className={`${
+                              true
+                                ? "text-[#2C2C2C] font-[650] "
+                                : "text-[#2C2C2C] "
+                            } text-[17px] duration-500 hover:before:visible before:w-full hover:before:left-0 before:invisible before:h-[0px] my-1 before:duration-300 hover:before:bg-[#458FF6] before:transition-all before:rounded-sm before:bg-gray-400 before:content-[''] before:absolute before:-left-5 before:top-6 relative text-center cursor-pointer transition-all hover:relative font-[550]`}
+                          >
+                            {t("header.charter")}
+                          </p>
+                        </Link>
                           <i class="fa-solid mt-[2.5px] fa-angle-right"></i>
                         </button>
                       </div>

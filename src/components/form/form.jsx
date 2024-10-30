@@ -103,7 +103,8 @@ const Form = () => {
                         className="py-[8px] w-full px-[45px] mt-[10px] justify-center transition-all bg-[#458FF6] text-[#fff] border border-[#458FF6] rounded-[15px] flex items-center gap-1.5 hover:bg-[#fff] hover:text-[#458FF6] font-[700]"
                         aria-label={title}
                     >
-                        {title}
+                        {t("contactDesc.connection")}
+                    
                         <i className="fa-solid mt-0.5 fa-angle-right"></i>
                     </button>
                 </div>

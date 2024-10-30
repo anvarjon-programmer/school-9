@@ -17,19 +17,19 @@ const Galery = () => {
         },
         {
             img:headImg2,
-            title:"Maktab holografiya honasi"
+            title:"Maktab xoreografiya Xonasi"
         },
         {
             img:headImg3,
-            title:"Maktab binosining ko‘rinishi"
+            title:"Maktab  foyesi "
         },
         {
             img:headImg4,
-            title:"Maktab binosining ko‘rinishi"
+            title:"Maktab  foyesi "
         },
         {
             img:headImg5,
-            title:"Kompyuter grafika honasi"
+            title:"Kompyuter grafika xonasi"
         },
     ]
 

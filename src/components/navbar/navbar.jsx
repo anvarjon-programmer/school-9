@@ -343,9 +343,12 @@ const Navbar = ({ main, about, service, contact }) => {
                       </div>
 
                       <div className="flex justify-start mt-[25px]">
-                        {/* <button className="hover:bg-[#3c6bac] px-[50px] py-[10px] transition-all bg-[#458FF6] text-[#fff] border border-[#458FF6] rounded-[15px] flex items-center gap-2 font-[700]">
+                        <Link to='/'>
+                        <button className="hover:bg-[#3c6bac] px-[50px] py-[10px] transition-all bg-[#458FF6] text-[#fff] border border-[#458FF6] rounded-[15px] flex items-center gap-2 font-[700]">
+                          {t("contactDesc.connection")}
                           <i class="fa-solid mt-[2.5px] fa-angle-right"></i>
-                        </button> */}
+                        </button>
+                        </Link>
                       </div>
                     </ul>
                   </div>

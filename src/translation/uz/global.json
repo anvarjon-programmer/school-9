@@ -6,10 +6,12 @@
         "news":"Yangliklar",
         "contact":"Aloqa",
         "charter":"Ustav",
-        "galery":"Galery"
+        "galery":"Galerya"
     },
     "employees":{
-        "title":"Toshkent shahar madaniyat boshqarmasi tasarrufidagi 9-son bolalar musiqa va san'at maktabi Hodimlari"
+        "title":"Toshkent shahar madaniyat boshqarmasi ",
+        "title2":"Tasarrufidagi  9-son bolalar musiqa va san'at maktabi",
+        "title3":"Hodimlari"
     },
     "news":{
         "news":"Yangliklar"

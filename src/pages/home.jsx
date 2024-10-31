@@ -191,8 +191,14 @@ useEffect(() => {
                             <img data-aos="fade-left" data-aos-duration="800" data-aos-delay="200" className="absolute right-0 mt-[450px]" src={design_elem3} alt="|||" />
 
                             {/* <Title title={"Toshkent shahar madaniyat boshqarmasi tasarrufidagi 9-son bolalar musiqa va san'at maktabi."} /> */}
-                            <h1 className='text-center text-3xl font-semibold max-w-[700px] m-auto'>
+                            <h1 className='text-center text-3xl font-semibold  m-auto'>
                                 {t("employees.title")}
+                            </h1>
+                            <h1 className='text-center text-3xl font-semibold max-w-[760px] m-auto'>
+                                {t("employees.title2")}
+                            </h1>
+                            <h1 className='text-center text-3xl font-semibold max-w-[760px] m-auto'>
+                                {t("employees.title3")}
                             </h1>
 
                             <div className="flex items-center flex-wrap mt-[50px] w-full gap-y-[45px] gap-x-[36px] justify-center">
@@ -233,10 +239,10 @@ useEffect(() => {
                                     modules={[Autoplay, Navigation]}
                                     className='pb-10'
                                 >
+                                    <SwiperSlide className='w-fit' >
                                     {
-                                        newsData.map((item, index) => (
-                                            <SwiperSlide className='w-fit' key={index}>
-                                                <News
+                                        newsData.map((item,index) =>(
+                                            <News key={index} 
                                                     title={item?.title}
                                                     image={item?.image_url}
                                                     desc={item?.body}
@@ -246,9 +252,9 @@ useEffect(() => {
                                                     id={item?.id}
                                                     fade={index == 0 ? "right" : index == 1 ? "up" : index == 2 ? "left" : index == 3 ? "right" : index == 4 ? "down" : index == 5 ? "left" : ""}
                                                 />
-                                            </SwiperSlide>
                                         ))
                                     }
+                                        </SwiperSlide>
 
                                 </Swiper>
 
@@ -263,15 +269,13 @@ useEffect(() => {
 
                             <div className='mt-[50px]'>
 
-                                {count.map((item,index) =>(
-                                    <Info key={index} info={[
-                                        {
-                                            title: item.title,
-                                            desc: item.body,
-                                        }
-                                        
-                                    ]} />
-                                ))}
+                            <Info
+                                info={count.map((item) => ({
+                                    title: item.title,
+                                    desc: item.body,
+                                }))}
+                                />
+
 
                             </div>
 

@@ -9,9 +9,9 @@
         "galery":"Galerya"
     },
     "employees":{
-        "title":"Toshkent shahar madaniyat boshqarmasi ",
-        "title2":"Tasarrufidagi  9-son bolalar musiqa va san'at maktabi",
-        "title3":"Hodimlari"
+        "title":"Toshkent shahar madaniyat boshqarmasi tasarrufidagi",
+        "title2":"9-son bolalar musiqa va san'at maktabi",
+        "title3":"hodimlari"
     },
     "news":{
         "news":"Yangliklar"
@@ -46,7 +46,7 @@
     "galery":{
         "name0":"Maktab galereyasi",
         "name1":"Maktab binosining ko‘rinishi",
-        "name2":"Maktab xoreografiya Xonasi",
+        "name2":"Maktab xoreografiya xonasi",
         "name3":"Maktab foyesi",
         "name4":"Maktab foyesi",
         "name5":"Kompyuter grafika xonasi"
